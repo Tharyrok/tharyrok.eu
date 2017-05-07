@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+
+{% for article in articles_page.object_list %}
+
+<div class="bg-faded p-4 my-4">
+    <div class="card card-inverse">
+        <img class="card-img img-fluid w-100" src="{{ SITEURL }}/cards-articles/{{ article.slug }}.jpg" alt="">
+        <div class="card-img-overlay bg-overlay">
+            <h2 class="card-title text-shadow text-uppercase mb-0">{{ article.title }}</h2>
+            <h4 class="text-shadow text-white">{{ article.locale_date }}</h4>
+            <p class="lead card-text text-shadow text-white w-50 hidden-md-down">{{ article.summary }}</p>
+            <a href="{{ SITEURL }}/{{ article.url }}" class="btn btn-secondary">Lire la suite ...</a>
+        </div>
+    </div>
+</div>
+
+{% endfor %}
+
+{% if articles_page.has_other_pages() %}
+    {% include 'pagination.html' %}
+{% endif %}
+
+</div><!-- /#content -->
+{% endblock content %}

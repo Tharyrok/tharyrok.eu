@@ -4,7 +4,14 @@ from __future__ import unicode_literals
 
 AUTHOR = 'Tharyrok'
 SITENAME = 'Tharyrok'
-SITEURL = ''
+SITEURL = '/blog'
+OUTPUT_PATH = 'output/blog/'
+PAGE_URL = '../{slug}.html'
+PAGE_SAVE_AS = '../{slug}.html'
+DISPLAY_PAGES_ON_MENU = False
+DISPLAY_CATEGORIES_ON_MENU = False
+
+MENUITEMS = [('Home', '/'), ('Blog', '/blog/')]
 
 PATH = 'content'
 
@@ -19,17 +26,16 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
-# Blogroll
-LINKS = (('Pelican', 'http://getpelican.com/'),
-         ('Python.org', 'http://python.org/'),
-         ('Jinja2', 'http://jinja.pocoo.org/'),
-         ('You can modify those links in your config file', '#'),)
-
-# Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
-
 DEFAULT_PAGINATION = 10
 
-# Uncomment following line if you want document-relative URLs when developing
-#RELATIVE_URLS = True
+EXTRA_PATH_METADATA = {
+    'extra/robots.txt': {'path': '../robots.txt'},
+    }
+
+STATIC_PATHS = [
+    'pictures',
+    'extra/robots.txt',
+    'cards-articles'
+    ]
+
+THEME = './themes/tharyrok'

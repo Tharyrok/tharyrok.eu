@@ -51,7 +51,7 @@ h1 {
 }
 
 .bg-faded {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.85);
 }
 
 .bg-overlay {
@@ -69,4 +69,8 @@ hr.divider {
 
 .map-container iframe.clicked {
     pointer-events: auto;
+}
+
+#second {
+    margin-top: 25px;
 }
