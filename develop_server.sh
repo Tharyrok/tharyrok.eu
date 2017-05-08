@@ -10,6 +10,7 @@ BASEDIR=$(pwd)
 INPUTDIR=$BASEDIR/content
 OUTPUTDIR=$BASEDIR/output/blog
 CONFFILE=$BASEDIR/pelicanconf.py
+WEBDIR=$BASEDIR/output
 
 ###
 # Don't change stuff below here unless you are sure
@@ -66,7 +67,7 @@ function start_up(){
   $PELICAN --debug --autoreload -r $INPUTDIR -o $OUTPUTDIR -s $CONFFILE $PELICANOPTS &
   pelican_pid=$!
   echo $pelican_pid > $PELICAN_PID
-  mkdir -p $OUTPUTDIR && cd $OUTPUTDIR
+  mkdir -p $OUTPUTDIR && cd $WEBDIR
   $PY -m pelican.server $port &
   srv_pid=$!
   echo $srv_pid > $SRV_PID

@@ -39,3 +39,8 @@ STATIC_PATHS = [
     ]
 
 THEME = './themes/tharyrok'
+ARTICLE_URL = 'posts/{date:%Y}/{date:%b}/{date:%d}/{slug}/'
+ARTICLE_SAVE_AS = 'posts/{date:%Y}/{date:%b}/{date:%d}/{slug}/index.html'
+AUTHORS_SAVE_AS = False
+AUTHOR_SAVE_AS = False
+CATEGORIES_SAVE_AS = False
